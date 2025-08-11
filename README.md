@@ -92,8 +92,7 @@ Traditional blood-bank systems face:
 
 ## 📷 Screenshots
 
-*(Add screenshots of your LiveDonorBoard, Hospital Dashboard, and Booking Flow here)*
-
+![Website Interface](image.png)
 ---
 
 ## ⚙️ Installation & Setup
