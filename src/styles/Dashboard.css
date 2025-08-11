@@ -1,0 +1,89 @@
+.dashboard-main {
+    padding: 40px;
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .dashboard-main h1 {
+    color: #dc3545;
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+  }
+  
+  .right-section {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.1);
+  }
+  
+  .card h3 {
+    margin-bottom: 15px;
+    color: #dc3545;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .chart-container {
+    padding: 20px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .reject-container {
+    position: relative;
+  }
+  
+  .reject-container select {
+    margin-top: 5px;
+    border-radius: 6px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  
+  .request-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .request-item:last-child {
+    border-bottom: none;
+  }
+  

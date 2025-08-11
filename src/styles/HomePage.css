@@ -1,0 +1,224 @@
+/* Keep Background Image */
+.home-container {
+    background-image: url("../assets/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Slider Styling */
+.slider-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-top: 0;
+    position: relative;
+}
+
+  .slider-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Ensure images fit properly */
+}
+
+/* Slider Arrow Styling */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(200, 0, 0, 0.9);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Cards Section */
+.sections-container {
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+/* Custom Card Styling */
+.custom-card {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #b71c1c;
+    margin: 10px; /* Added margin for spacing */
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(183, 28, 28, 0.3);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b71c1c;
+}
+
+.card-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card-btn:hover {
+    background-color: darkred;
+}
+
+/* Blood Donation Information Section */
+.donation-info-section {
+    width: 100%;
+    padding: 60px 10%;
+    text-align: center;
+    background: radial-gradient(circle, white 30%, #d32f2f 100%);
+    color: #690000;
+}
+
+.donation-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #b71c1c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.donation-subheading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b71c1c;
+    margin-top: 20px;
+}
+
+.donation-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.donation-list {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .donation-info-section {
+        padding: 30px;
+    }
+
+    .donation-heading {
+        font-size: 2rem;
+    }
+
+    .donation-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+/* Blood Donation Statistics Section */
+.blood-donation-stats-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.stats-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.stats-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Cards in Statistics Section */
+.stats-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px; /* Added margin for spacing */
+}
+
+.stats-card:hover {
+    transform: scale(1.05);
+}
+
+.stats-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.stats-card-text {
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+}
+
+/* Ensure Equal Spacing Between Cards */
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Bullet Points for Content in Cards */
+.stats-list {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    color: black;
+}
