@@ -22,6 +22,7 @@ import LiveDonorBoard from './pages/LiveDonorBoard';
 import Hospital from './pages/Hospital';
 import HospitalDashboardPage from './pages/HospitalDashboard';
 import HospitalLoginPage from './pages/HospitalLogin';
+import EventsPage from "./pages/EventsPage";
 
 function AppContent() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function AppContent() {
           <Route path="/Hospital" element={<Hospital />} />
           <Route path="/hospital-dashboard" element={<HospitalDashboardPage />} />
           <Route path="/hospital-login" element={<HospitalLoginPage />} />
+          <Route path="/EventsPage" element={<EventsPage />} />
         </Routes>
       </div>
 

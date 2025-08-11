@@ -59,11 +59,17 @@ function HomePage() {
 
           <div className="col-md-4">
             <div className="custom-card">
-              <h5 className="card-title">Book & Donate</h5>
+              <h5 className="card-title">Nearby Camps & Awareness Programs</h5>
               <p className="card-text">
-                Book your donation slot or respond to urgent requests. Your contribution is tracked and rewarded every time you donate.
+                Find upcoming blood donation camps and awareness seminars near you.  
+                Join and make a difference!
               </p>
-              <button className="card-btn" onClick={() => navigate('/donate')}>Donate Now</button>
+              <button
+                className="card-btn"
+                onClick={() => navigate('/EventsPage')}
+              >
+                View & Add Events
+              </button>
             </div>
           </div>
 
