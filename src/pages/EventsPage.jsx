@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/EventsPage.css";
 
 const EventsPage = () => {
-  const [events, setEvents] = useState([
+  const [events] = useState([
     {
       id: 1,
       title: "Blood Donation Camp - AIIMS",
@@ -75,81 +75,187 @@ const EventsPage = () => {
     }
   ]);
 
-  const [newEvent, setNewEvent] = useState({
-    title: "",
-    date: "",
-    location: "",
-    description: ""
+  const [requestForm, setRequestForm] = useState({
+    hospitalName: "",
+    hospitalAddress: "",
+    preferredDate: "",
+    contactName: "",
+    contactPhone: "",
+    additionalDetails: ""
   });
 
-  const handleChange = (e) => {
-    setNewEvent({ ...newEvent, [e.target.name]: e.target.value });
+  const [requests, setRequests] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // Fetch requests from backend on mount
+  useEffect(() => {
+    fetchRequests();
+  }, []);
+
+  const fetchRequests = async () => {
+    setLoading(true);
+    try {
+  const res = await fetch("http://localhost:4000/api/auth/requests");
+      const data = await res.json();
+      setRequests(data);
+    } catch (err) {
+      alert("Failed to fetch requests");
+    }
+    setLoading(false);
   };
 
-  const addEvent = (e) => {
+  const handleRequestChange = (e) => {
+    setRequestForm({ ...requestForm, [e.target.name]: e.target.value });
+  };
+
+  const submitRequest = async (e) => {
     e.preventDefault();
-    if (!newEvent.title || !newEvent.date || !newEvent.location) {
+    if (
+      !requestForm.hospitalName ||
+      !requestForm.hospitalAddress ||
+      !requestForm.preferredDate ||
+      !requestForm.contactName ||
+      !requestForm.contactPhone
+    ) {
       alert("Please fill all required fields");
       return;
     }
-    setEvents([...events, { ...newEvent, id: Date.now() }]);
-    setNewEvent({ title: "", date: "", location: "", description: "" });
+    try {
+  const res = await fetch("http://localhost:4000/api/auth/requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestForm)
+      });
+      if (res.ok) {
+        alert("Your request for a blood donation camp has been submitted!");
+        setRequestForm({
+          hospitalName: "",
+          hospitalAddress: "",
+          preferredDate: "",
+          contactName: "",
+          contactPhone: "",
+          additionalDetails: ""
+        });
+        fetchRequests(); // Refresh requests list
+      } else {
+        alert("Failed to submit request");
+      }
+    } catch (err) {
+      alert("Error submitting request");
+    }
   };
 
   return (
     <div className="events-container">
       <h2>Upcoming Blood Donation Camps & Seminars</h2>
-
-      {/* Event List */}
       <div className="events-grid">
         {events.map((event) => (
-          <div key={event.id} className="event-card">
-            <h4>{event.title}</h4>
-            <p><strong>Date:</strong> {event.date}</p>
-            <p><strong>Location:</strong> {event.location}</p>
-            <p>{event.description}</p>
+          <div key={event.id} className="event-card improved-event-card">
+            <div className="event-card-header">
+              <div className="event-icon">🩸</div>
+              <div>
+                <h4 className="event-title">{event.title}</h4>
+                <div className="event-date-location">
+                  <span className="event-date"><i className="fa fa-calendar"></i> {event.date}</span>
+                  <span className="event-location"><i className="fa fa-map-marker"></i> {event.location}</span>
+                </div>
+              </div>
+            </div>
+            <div className="event-description">
+              {event.description}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Add Event Form */}
       <div className="add-event">
-        <h3>Add a New Event</h3>
-        <form onSubmit={addEvent}>
+        <h3>Request a Blood Donation Camp Near Me</h3>
+        <form onSubmit={submitRequest}>
           <input
             type="text"
-            name="title"
-            placeholder="Event Title"
-            value={newEvent.title}
-            onChange={handleChange}
+            name="hospitalName"
+            placeholder="Hospital Name"
+            value={requestForm.hospitalName}
+            onChange={handleRequestChange}
+            required
+          />
+          <input
+            type="text"
+            name="hospitalAddress"
+            placeholder="Hospital Address"
+            value={requestForm.hospitalAddress}
+            onChange={handleRequestChange}
             required
           />
           <input
             type="date"
-            name="date"
-            value={newEvent.date}
-            onChange={handleChange}
+            name="preferredDate"
+            value={requestForm.preferredDate}
+            onChange={handleRequestChange}
             required
           />
           <input
             type="text"
-            name="location"
-            placeholder="Location"
-            value={newEvent.location}
-            onChange={handleChange}
+            name="contactName"
+            placeholder="Your Name"
+            value={requestForm.contactName}
+            onChange={handleRequestChange}
+            required
+          />
+          <input
+            type="tel"
+            name="contactPhone"
+            placeholder="Contact Phone"
+            value={requestForm.contactPhone}
+            onChange={handleRequestChange}
             required
           />
           <textarea
-            name="description"
-            placeholder="Description (optional)"
-            value={newEvent.description}
-            onChange={handleChange}
+            name="additionalDetails"
+            placeholder="Additional Details (optional)"
+            value={requestForm.additionalDetails}
+            onChange={handleRequestChange}
           />
-          <button type="submit">Add Event</button>
+          <button type="submit">Request Camp</button>
         </form>
+      </div>
+
+      <div className="current-requests">
+        <h3>Current Requests</h3>
+        {loading ? (
+          <p>Loading...</p>
+        ) : requests.length === 0 ? (
+          <p>No requests yet.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Hospital Name</th>
+                <th>Address</th>
+                <th>Preferred Date</th>
+                <th>Contact Name</th>
+                <th>Contact Phone</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {requests.map((req, idx) => (
+                <tr key={idx}>
+                  <td>{req.hospitalName}</td>
+                  <td>{req.hospitalAddress}</td>
+                  <td>{req.preferredDate}</td>
+                  <td>{req.contactName}</td>
+                  <td>{req.contactPhone}</td>
+                  <td>{req.additionalDetails}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
 };
 
 export default EventsPage;
+

@@ -1,11 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
+// ProtectedRoute component to guard routes
+
+function ProtectedRoute({ children }) {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const location = useLocation();
+  return isLoggedIn ? children : (
+    <Navigate to="/login" replace state={{ from: location.pathname, message: "Please login or signup first to donate or request blood." }} />
+  );
+}
+
+function HospitalProtectedRoute({ children }) {
+  const hospitalData = localStorage.getItem("hospitalData");
+  const location = useLocation();
+  return hospitalData ? children : (
+    <Navigate to="/hospital-login" replace state={{ from: location.pathname, message: "Please login to access hospital dashboard." }} />
+  );
+}
+
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
+import HospitalNavbar from "./components/HospitalNavbar";
 import Footer from "./components/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Chatbot from "./components/Chatbot";
+import "./styles/responsive.css";
+
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import TopDonors from './pages/TopDonors';
@@ -26,21 +46,40 @@ import EventsPage from "./pages/EventsPage";
 
 function AppContent() {
   const location = useLocation();
-  const hideFooterRoutes = ['/login', '/signup'];
+  const hideFooterRoutes = ['/login', '/signup', '/hospital-login', '/hospital-dashboard'];
+  const isHospitalRoute = location.pathname.startsWith('/hospital-dashboard') || 
+                         location.pathname === '/hospital' ||
+                         location.pathname === '/demand' ||
+                         location.pathname === '/EventsPage';
+  
+  const hospitalData = JSON.parse(localStorage.getItem("hospitalData") || 'null');
 
   return (
     <div className="app-container">
-      <Navbar />
+      {isHospitalRoute && hospitalData ? (
+        <HospitalNavbar hospital={hospitalData} />
+      ) : (
+        <Navbar />
+      )}
+      
       <div className="routes-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/request" element={<TopDonors />} />
+          <Route path="/request" element={
+            <ProtectedRoute>
+              <TopDonors />
+            </ProtectedRoute>
+          } />
 
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/donate" element={<Donate />} />
+          <Route path="/donate" element={
+            <ProtectedRoute>
+              <Donate />
+            </ProtectedRoute>
+          } />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/demand" element={<Demand />} />
@@ -49,15 +88,17 @@ function AppContent() {
           <Route path="/TermsOfService" element={<TermsOfService />} />
           <Route path="/LiveDonorBoard" element={<LiveDonorBoard />} />
           <Route path="/Hospital" element={<Hospital />} />
-          <Route path="/hospital-dashboard" element={<HospitalDashboardPage />} />
+          <Route path="/hospital-dashboard" element={
+            <HospitalProtectedRoute>
+              <HospitalDashboardPage />
+            </HospitalProtectedRoute>
+          } />
           <Route path="/hospital-login" element={<HospitalLoginPage />} />
           <Route path="/EventsPage" element={<EventsPage />} />
         </Routes>
       </div>
 
-      <Chatbot />
-
-      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
+      {!hideFooterRoutes.includes(location.pathname) && !isHospitalRoute && <Footer />}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../styles/Login.css';
 
 const Login = () => {
+  const location = useLocation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -41,6 +42,12 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      {location.state?.message && (
+        <div className="login-required-message">
+          <span className="login-required-icon">&#9888;</span>
+          {location.state.message}
+        </div>
+      )}
       <div className="quote-section">
         <h1>Donate Blood, Save Lives</h1>
         <p>
@@ -64,7 +71,7 @@ const Login = () => {
         />
         <button onClick={handleLogin}>Login</button>
         <p className="signup-option">
-          Not registered? <Link to="/signup">Sign up</Link>
+          Not registered? <Link to="/signup" state={location.state}>Sign up</Link>
         </p>
       </div>
     </div>

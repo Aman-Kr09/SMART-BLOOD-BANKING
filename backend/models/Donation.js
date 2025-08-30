@@ -18,6 +18,10 @@ const donationSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  hospital: {
+    type: String,
+    default: ""
+  },
   frequency: {
     type: Number,
     default: 1,  // Starting frequency (you can update it later)

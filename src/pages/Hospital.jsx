@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HospitalLogin from "../components/HospitalLogin";
+import HospitalSignin from "../components/HospitalSignin";
 import HospitalDashboard from "../components/HospitalDashboard";
 
 const Hospital = () => {
@@ -12,7 +13,7 @@ const Hospital = () => {
 
   return (
     <>
-      {hospitalLoggedIn ? <HospitalDashboard /> : <HospitalLogin />}
+      {hospitalLoggedIn ? <HospitalDashboard /> : <HospitalSignin />}
     </>
   );
 };

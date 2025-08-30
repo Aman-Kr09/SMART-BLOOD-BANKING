@@ -4,7 +4,7 @@ import "../styles/Legal.css";
 const TermsOfService = () => {
   return (
     <div className="legal-page">
-      <div className="legal-card">
+  <div className="legal-card terms-wide">
         <h1>Terms of Service</h1>
         <p>Effective Date: August 6, 2025</p>
 

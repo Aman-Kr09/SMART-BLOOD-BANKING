@@ -8,7 +8,7 @@
   }
   
   .about-card {
-    max-width: 800px;
+    max-width: 1114px;
     background: #fff;
     border-radius: 16px;
     padding: 40px;
@@ -19,7 +19,7 @@
   
   .about-card h1 {
     font-size: 36px;
-    color: #dc3545;
+    color: #e74c3c;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -31,7 +31,7 @@
   }
   
   .about-card .highlight {
-    color: #dc3545;
+    color: #e74c3c;
     font-weight: bold;
   }
   

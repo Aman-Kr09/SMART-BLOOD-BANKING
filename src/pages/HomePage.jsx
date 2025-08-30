@@ -33,11 +33,9 @@ function HomePage() {
             <img src="/images/slide4.jpg" alt="1" className="slider-image" />
           </div>
           <div>
-            <img src="/images/slide5.jpg" alt="2" className="slider-image" />
+            <img src="/images/slide5.png" alt="2" className="slider-image" />
           </div>
-          <div>
-            <img src="/images/slide6.jpg" alt="3" className="slider-image"/>
-          </div>
+
         </Slider>
         <button className="slider-arrow right-arrow" onClick={() => sliderRef.current.slickNext()}>
           ❯
@@ -80,6 +78,32 @@ function HomePage() {
                 Hospitals can monitor blood inventory, manage emergency requests, and coordinate with other centers—all in one place.
               </p>
               <button className="card-btn" onClick={() => navigate('/Hospital')}>Hospital Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Donate CTA */}
+      <div className="container" style={{marginTop:20, display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <div className="row" style={{width:'100%', display:'flex', justifyContent:'center'}}>
+          <div className="col-12" style={{display:'flex', justifyContent:'center'}}>
+            <div className="custom-card cta-horizontal-card">
+              <h5 className="card-title" style={{color:'#d62828', width: '100%'}}>Ready to Make a Difference?</h5>
+              <div className="cta-horizontal-content">
+                <div className="cta-horizontal-text">
+                  <p className="card-text" style={{color:'#333', fontWeight: 500}}>
+                    Whether you want to <span style={{color:'#e74c3c', fontWeight:'bold'}}>donate blood</span> or <span style={{color:'#1976d2', fontWeight:'bold'}}>request blood</span>, you can help save lives or get the help you need—quickly and easily.
+                  </p>
+                </div>
+                <div className="cta-horizontal-buttons">
+                  <button className="card-btn" style={{background:'#e74c3c', minWidth: '140px', fontWeight:'bold'}} onClick={() => navigate('/donate')}>
+                    Donate Now
+                  </button>
+                  <button className="card-btn" style={{background:'#1976d2', minWidth: '140px', fontWeight:'bold'}} onClick={() => navigate('/demand')}>
+                    Request Blood
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -5,15 +5,21 @@ const cors = require('cors');
 const axios = require('axios');
 
 const authRoutes = require('./routes/auth');
+const hospitalRoutes = require('./routes/hospital');
+
 const contactRoutes = require('./routes/contact');
+const eventRequestRoutes = require('./routes/eventRequest');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Routes
+
 app.use('/api', authRoutes);
+app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/contact', contactRoutes);  // POST goes to /api/contact
+app.use('/api/auth/requests', eventRequestRoutes); // For event requests from EventsPage
 
 app.post('/predict', async (req, res) => {
   try {
@@ -26,8 +32,6 @@ app.post('/predict', async (req, res) => {
 });
 
 mongoose.connect('mongodb://127.0.0.1:27017/donation_app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB connected');
   app.listen(4000, () => {

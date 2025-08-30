@@ -34,14 +34,14 @@ const disableDashboardCache = (req, res, next) => {
 
 // Signup
 router.post("/signup", async (req, res) => {
-  const { fullname, username, password, phone, address } = req.body;
+  const { fullname, username, password, phone, address, preferredHospital } = req.body;
 
   try {
     const existing = await User.findOne({ username });
     if (existing) return res.status(409).json({ message: "User already exists" });
 
     const hashed = await bcrypt.hash(password, 10);
-    const newUser = new User({ fullname, username, password: hashed, phone, address });
+    const newUser = new User({ fullname, username, password: hashed, phone, address, preferredHospital });
     await newUser.save();
 
     res.status(201).json({ message: "User registered" });
@@ -84,7 +84,7 @@ router.get("/me", verifyToken, async (req, res) => {
 
 // Donate blood
 router.post("/donate", verifyToken, async (req, res) => {
-  const { blood_type, units, donation_date } = req.body;
+  const { blood_type, units, donation_date, hospital } = req.body;
   const userId = req.user.userId;
 
   try {
@@ -96,6 +96,7 @@ router.post("/donate", verifyToken, async (req, res) => {
       blood_type,
       units,
       donation_date,
+      hospital: hospital || "",
       frequency,
     });
     await newDonation.save();

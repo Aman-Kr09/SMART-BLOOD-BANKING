@@ -1,3 +1,45 @@
+/* CTA Horizontal Card Styling */
+.cta-horizontal-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 180px;
+}
+
+
+.cta-horizontal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+
+.cta-horizontal-text {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+
+.cta-horizontal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Responsive: No change needed, already column and centered */
 /* Keep Background Image */
 .home-container {
     background-image: url("../assets/bg1.jpg");
@@ -21,10 +63,16 @@
     position: relative;
 }
 
-  .slider-image {
+
+.slider-image {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Ensure images fit properly */
+    aspect-ratio: 16/9;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    background: #eee;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Slider Arrow Styling */
@@ -32,7 +80,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: rgba(230, 74, 25, 0.85);
     color: white;
     border: none;
     font-size: 2rem;
@@ -44,7 +92,7 @@
 }
 
 .slider-arrow:hover {
-    background-color: rgba(200, 0, 0, 0.9);
+    background-color: rgba(214, 40, 40, 0.95);
 }
 
 .left-arrow {
@@ -75,7 +123,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 3px solid #b71c1c;
+    border: 3px solid #ff6b35; /* orangish accent */
     margin: 10px; /* Added margin for spacing */
 }
 
@@ -87,7 +135,7 @@
 .card-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #b71c1c;
+    color: #d62828; /* strong red */
 }
 
 .card-btn {
@@ -102,7 +150,7 @@
 }
 
 .card-btn:hover {
-    background-color: darkred;
+    background-color: #a10000;
 }
 
 /* Blood Donation Information Section */
@@ -110,14 +158,14 @@
     width: 100%;
     padding: 60px 10%;
     text-align: center;
-    background: radial-gradient(circle, white 30%, #d32f2f 100%);
-    color: #690000;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f0 100%);
+    color: #7a0000;
 }
 
 .donation-heading {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #b71c1c;
+    color: #d62828;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -125,7 +173,7 @@
 .donation-subheading {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #b71c1c;
+    color: #e64a19; /* orange */
     margin-top: 20px;
 }
 
@@ -166,7 +214,7 @@
 .stats-heading {
     font-size: 28px;
     font-weight: bold;
-    color: #d9534f;
+    color: #d62828;
     margin-bottom: 20px;
 }
 
@@ -198,7 +246,7 @@
 .stats-card-title {
     font-size: 22px;
     font-weight: bold;
-    color: #d9534f;
+    color: #e64a19;
 }
 
 .stats-card-text {
