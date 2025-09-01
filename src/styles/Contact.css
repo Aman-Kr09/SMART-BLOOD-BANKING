@@ -1,4 +1,5 @@
 .contact-page {
+  @import url('./theme.css');
     display: flex;
     justify-content: center;
     align-items: flex-start;

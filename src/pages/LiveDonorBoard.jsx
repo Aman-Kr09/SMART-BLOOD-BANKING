@@ -6,6 +6,7 @@ import {
   FaWhatsapp, 
   FaUserPlus, 
   FaSearch, 
+  FaSync,
   FaHeartbeat, 
   FaCalendarAlt,
   FaShare,
@@ -477,7 +478,7 @@ const LiveDonorBoard = () => {
           </div>
           <div className="header-actions">
             <button onClick={loadData} className="action-btn secondary">
-              <FaSearch /> Refresh
+              <FaSync /> Refresh
             </button>
             <button onClick={() => window.location.assign('/donate')} className="action-btn primary">
               <FaUserPlus /> Become a Donor
@@ -713,18 +714,16 @@ const LiveDonorBoard = () => {
                       <FaCalendarAlt /> Book Now
                     </button>
                     
-                    {donor.socialShare && (
-                      <button
-                        onClick={() => {
-                          setSelectedDonor(donor);
-                          setShowShareModal(true);
-                        }}
-                        className="action-btn share"
-                        title="Share donation badge"
-                      >
-                        <FaShare /> Share
-                      </button>
-                    )}
+                    <button
+                      onClick={() => {
+                        setSelectedDonor(donor);
+                        setShowShareModal(true);
+                      }}
+                      className="action-btn share"
+                      title="Share donation badge"
+                    >
+                      <FaShare /> Share
+                    </button>
                   </div>
 
                   {/* Journey Tracker */}

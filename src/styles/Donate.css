@@ -1,3 +1,4 @@
+@import url('./theme.css');
 /* Enhanced Donate Page Styles */
 
 .donate-container {
@@ -12,7 +13,7 @@
 .donate-header {
   text-align: center;
   margin-bottom: 32px;
-  background: white;
+  background: #d62828;
   padding: 32px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -21,7 +22,7 @@
 .donate-header h2 {
   margin: 0 0 12px 0;
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +31,7 @@
 
 .donate-header p {
   margin: 0;
-  color: #7f8c8d;
+  color: #f8f9fa;
   font-size: 1.1rem;
 }
 
@@ -117,7 +118,6 @@
   padding: 24px;
   margin-bottom: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border-left: 4px solid #f39c12;
 }
 
 .requirements-header {
@@ -148,7 +148,6 @@
   padding: 12px;
   background: #f8fafc;
   border-radius: 12px;
-  border-left: 4px solid #3498db;
 }
 
 .requirement-item svg {
@@ -169,7 +168,6 @@
 
 .requirements-tips {
   background: #fff8e1;
-  border: 1px solid #ffe082;
   border-radius: 12px;
   padding: 16px;
   color: #b26a00;
@@ -180,7 +178,6 @@
 /* Error Message */
 .error-message {
   background: #fee;
-  border: 2px solid #fcc;
   border-radius: 12px;
   padding: 16px;
   margin: 24px 0;
@@ -226,23 +223,22 @@
 
 .form-input {
   padding: 14px 16px;
-  border: 2px solid #e2e8f0;
+  border: none;
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #f8fafc;
+  background: #e9ecef;
   resize: vertical;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #3498db;
-  background: white;
+  background: #e9ecef;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 .form-input:invalid {
-  border-color: #e74c3c;
+  background: #e9ecef;
 }
 
 /* Health Confirmation */
@@ -257,25 +253,25 @@
   cursor: pointer;
   padding: 16px;
   border-radius: 12px;
-  background: #fff8e1;
-  border: 2px solid #ffe082;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
   transition: all 0.3s ease;
 }
 
 .health-checkbox:hover {
-  background: #fff3cd;
-  border-color: #f39c12;
+  background: #e9ecef;
+  border-color: #d62828;
 }
 
 .health-checkbox input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #f39c12;
+  accent-color: #d62828;
 }
 
 .label-text {
   font-size: 1rem;
-  color: #b26a00;
+  color: #495057;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -292,20 +288,20 @@
   cursor: pointer;
   padding: 16px;
   border-radius: 12px;
-  background: #f3e5f5;
-  border: 2px solid #e1bee7;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
   transition: all 0.3s ease;
 }
 
 .share-checkbox:hover {
-  background: #e1bee7;
-  border-color: #9c27b0;
+  background: #e9ecef;
+  border-color: #d62828;
 }
 
 .share-checkbox input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #9c27b0;
+  accent-color: #d62828;
 }
 
 /* Submit Button */

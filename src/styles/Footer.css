@@ -1,4 +1,5 @@
 .footer {
+  @import url('./theme.css');
   background-color: #a10000;
   color: #ccc;
   padding: 20px 0;

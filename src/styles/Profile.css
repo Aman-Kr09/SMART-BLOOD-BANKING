@@ -1,4 +1,5 @@
 .profile-container {
+  @import url('./theme.css');
     max-width: 1164px;
     margin: 40px auto;
     padding: 20px;

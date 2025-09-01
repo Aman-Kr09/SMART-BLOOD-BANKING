@@ -1,3 +1,4 @@
+@import url('./theme.css');
 /* Responsive and polished Hospital Login */
 .hospital-login-container { padding: 24px 16px; }
 .hospital-login-card { max-width: 900px; margin: 0 auto; background:#fff; border:1px solid #eee; border-radius:12px; overflow:hidden; }

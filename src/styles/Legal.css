@@ -1,4 +1,5 @@
 .legal-page {
+  @import url('./theme.css');
   padding: 40px 20px;
   background-color: #fafafa;
   min-height: 100vh;

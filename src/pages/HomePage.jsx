@@ -30,12 +30,13 @@ function HomePage() {
         </button>
         <Slider ref={sliderRef} {...settings}>
           <div>
-            <img src="/images/slide4.jpg" alt="1" className="slider-image" />
+            <img src="/images/slide5.png" alt="1" className="slider-image" />
           </div>
           <div>
-            <img src="/images/slide5.png" alt="2" className="slider-image" />
+            <img src="/images/slide5.png" alt="1" className="slider-image" />
+          </div><div>
+            <img src="/images/slide5.png" alt="1" className="slider-image" />
           </div>
-
         </Slider>
         <button className="slider-arrow right-arrow" onClick={() => sliderRef.current.slickNext()}>
           ❯
@@ -99,7 +100,7 @@ function HomePage() {
                   <button className="card-btn" style={{background:'#e74c3c', minWidth: '140px', fontWeight:'bold'}} onClick={() => navigate('/donate')}>
                     Donate Now
                   </button>
-                  <button className="card-btn" style={{background:'#1976d2', minWidth: '140px', fontWeight:'bold'}} onClick={() => navigate('/demand')}>
+                  <button className="card-btn" style={{background:'#1976d2', minWidth: '140px', fontWeight:'bold'}} onClick={() => navigate('/request')}>
                     Request Blood
                   </button>
                 </div>

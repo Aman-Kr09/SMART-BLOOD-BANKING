@@ -16,6 +16,11 @@ app.use(express.json());
 
 // Routes
 
+// Health check route
+app.get('/health', (req, res) => {
+  res.json({ message: 'Server is running', status: 'OK' });
+});
+
 app.use('/api', authRoutes);
 app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/contact', contactRoutes);  // POST goes to /api/contact

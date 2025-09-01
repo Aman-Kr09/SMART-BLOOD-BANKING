@@ -1,10 +1,11 @@
 
+@import url('./theme.css');
 /* Login required message styling (same as Login.css for consistency) */
 .login-required-message {
     width: 100%;
-    background: linear-gradient(90deg, #ffe0e0 0%, #ffd6d6 100%);
-    color: #b30000;
-    border: 1.5px solid #e74c3c;
+    background: linear-gradient(90deg, var(--light-color) 0%, #ffd6d6 100%);
+    color: var(--primary-dark);
+    border: 1.5px solid var(--accent-color);
     border-radius: 8px;
     font-weight: 600;
     font-size: 1.1rem;
@@ -15,14 +16,14 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.08);
+    box-shadow: var(--box-shadow);
     letter-spacing: 0.5px;
     animation: fadeIn 0.7s;
 }
 .login-required-icon {
     font-size: 1.5rem;
     margin-right: 6px;
-    color: #e74c3c;
+    color: var(--accent-color);
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
@@ -34,16 +35,16 @@
     max-width: 1200px;
     height: auto;
     max-height: none;
-    border-radius: 15px;
+    border-radius: var(--border-radius-lg);
     overflow: visible;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-lg);
     margin: 24px auto; /* Center the box */
 }
 
 .quote-section {
     width: 60%;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-dark));
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,3 +1,4 @@
+@import url('./theme.css');
 /* Hospital Navbar Styles */
 .hospital-navbar {
   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);

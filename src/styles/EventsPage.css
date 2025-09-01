@@ -1,5 +1,6 @@
 
 .improved-event-card {
+  @import url('./theme.css');
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

@@ -458,9 +458,6 @@ const HospitalDashboard = () => {
                 <button className="action-btn" onClick={saveCapacity}>
                   <FaCog /> Save Capacity
                 </button>
-                <button className="action-btn" onClick={() => navigate("/hospital")}>
-                  <FaHospital /> View Public Page
-                </button>
                 <button className="action-btn" onClick={() => navigate("/demand")}>
                   <FaChartBar /> Blood Demand
                 </button>

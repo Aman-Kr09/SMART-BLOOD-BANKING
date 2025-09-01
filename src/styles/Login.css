@@ -1,10 +1,11 @@
 
+@import url('./theme.css');
 /* Login required message styling */
 .login-required-message {
     width: 100%;
-    background: linear-gradient(90deg, #ffe0e0 0%, #ffd6d6 100%);
-    color: #b30000;
-    border: 1.5px solid #ff6b6b;
+    background: linear-gradient(90deg, var(--light-color) 0%, #ffd6d6 100%);
+    color: var(--primary-dark);
+    border: 1.5px solid var(--accent-color);
     border-radius: 8px;
     font-weight: 600;
     font-size: 1.1rem;
@@ -15,14 +16,14 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.08);
+    box-shadow: var(--box-shadow);
     letter-spacing: 0.5px;
     animation: fadeIn 0.7s;
 }
 .login-required-icon {
     font-size: 1.5rem;
     margin-right: 6px;
-    color: #ff3d3d;
+    color: var(--accent-color);
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }

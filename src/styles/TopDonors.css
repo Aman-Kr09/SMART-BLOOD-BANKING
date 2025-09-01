@@ -1,4 +1,5 @@
 .top-donors-container {
+  @import url('./theme.css');
     max-width: 1129px;
     margin: 40px auto;
     padding: 30px;

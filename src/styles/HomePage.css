@@ -1,5 +1,6 @@
 /* CTA Horizontal Card Styling */
 .cta-horizontal-card {
+    @import url('./theme.css');
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -42,13 +43,10 @@
 /* Responsive: No change needed, already column and centered */
 /* Keep Background Image */
 .home-container {
-    background-image: url("../assets/bg1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #ffeaf4; /* even lighter pink */
     min-height: 100vh;
     text-align: center;
-    color: white;
+    color: #333;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -80,7 +78,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(230, 74, 25, 0.85);
+    background-color: rgba(214, 40, 40, 0.95);
     color: white;
     border: none;
     font-size: 2rem;
@@ -123,7 +121,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 3px solid #ff6b35; /* orangish accent */
     margin: 10px; /* Added margin for spacing */
 }
 

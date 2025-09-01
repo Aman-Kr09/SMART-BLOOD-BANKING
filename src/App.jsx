@@ -49,7 +49,6 @@ function AppContent() {
   const hideFooterRoutes = ['/login', '/signup', '/hospital-login', '/hospital-dashboard'];
   const isHospitalRoute = location.pathname.startsWith('/hospital-dashboard') || 
                          location.pathname === '/hospital' ||
-                         location.pathname === '/demand' ||
                          location.pathname === '/EventsPage';
   
   const hospitalData = JSON.parse(localStorage.getItem("hospitalData") || 'null');
