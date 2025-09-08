@@ -347,7 +347,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email [support@smartbloodbank.com](231220008@nitdelhi.ac.in) or join our [Discord community](https://discord.gg/smartbloodbank).
+For support, email [231220008@nitdelhi.ac.in](231220008@nitdelhi.ac.in) or join our [Discord community](https://discord.gg/smartbloodbank).
 
 ---
 
