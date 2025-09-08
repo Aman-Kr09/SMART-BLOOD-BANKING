@@ -345,18 +345,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👥 Team
-
-- **Frontend Development**: React.js, Chart.js, Responsive Design
-- **Backend Development**: Node.js, Express.js, MongoDB
-- **Machine Learning**: Python, scikit-learn, Data Science
-- **DevOps**: Git, Deployment, Performance Optimization
-
----
-
 ## 📞 Support
 
-For support, email [support@smartbloodbank.com](mailto:support@smartbloodbank.com) or join our [Discord community](https://discord.gg/smartbloodbank).
+For support, email [support@smartbloodbank.com](231220008@nitdelhi.ac.in) or join our [Discord community](https://discord.gg/smartbloodbank).
 
 ---
 
