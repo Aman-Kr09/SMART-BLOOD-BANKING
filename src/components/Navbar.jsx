@@ -30,26 +30,70 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/donate">Donate</Link>
+            {/* Services Dropdown */}
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle"
+                id="servicesDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{fontSize: "1.1rem"}}
+              >
+                Services
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/donate" style={{color: "#a10000", fontSize: "1rem"}}>Donate Blood</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/request" style={{color: "#a10000", fontSize: "1rem"}}>Request Blood</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/LiveDonorBoard" style={{color: "#a10000", fontSize: "1rem"}}>Blood Alerts</Link>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/request">Request</Link>
+
+            {/* Blood Management Dropdown */}
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle"
+                id="managementDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{fontSize: "1.1rem"}}
+              >
+                Management
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="managementDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/Hospital" style={{color: "#a10000", fontSize: "1rem"}}>Hospital Portal</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/analytics" style={{color: "#a10000", fontSize: "1rem"}}>Blood Analytics</Link>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/LiveDonorBoard">Blood Alerts</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/demand">Demand</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Hospital">Hospital</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+
+            {/* Information Dropdown */}
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle"
+                id="infoDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{fontSize: "1.1rem"}}
+              >
+                Information
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="infoDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/about" style={{color: "#a10000", fontSize: "1rem"}}>About Us</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/contact" style={{color: "#a10000", fontSize: "1rem"}}>Contact</Link>
+                </li>
+              </ul>
             </li>
 
             {isLoggedIn ? (
@@ -59,19 +103,20 @@ const Navbar = () => {
                   id="userDropdown"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  style={{fontSize: "1.1rem"}}
                 >
                   My Profile
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                   <li>
-                    <Link className="dropdown-item" to="/profile">View Profile</Link>
+                    <Link className="dropdown-item" to="/profile" style={{color: "#a10000", fontSize: "1rem"}}>View Profile</Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
+                    <Link className="dropdown-item" to="/dashboard" style={{color: "#a10000", fontSize: "1rem"}}>Dashboard</Link>
                   </li>
                   <li><hr className="dropdown-divider" /></li>
                   <li>
-                    <button className="dropdown-item" onClick={handleLogout}>
+                    <button className="dropdown-item" onClick={handleLogout} style={{color: "#a10000", fontSize: "1rem"}}>
                       Logout
                     </button>
                   </li>
@@ -82,6 +127,7 @@ const Navbar = () => {
                 <Link
                   className="nav-link btn btn-light text-danger px-3 ms-2"
                   to="/login"
+                  style={{fontSize: "1.1rem"}}
                 >
                   Login/Signup
                 </Link>

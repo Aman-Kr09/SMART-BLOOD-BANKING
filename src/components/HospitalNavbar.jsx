@@ -4,7 +4,6 @@ import {
   FaHospital, 
   FaHome, 
   FaUserMd, 
-  FaChartLine, 
   FaCalendarCheck, 
   FaCog,
   FaSignOutAlt,
@@ -20,7 +19,6 @@ const HospitalNavbar = ({ hospital }) => {
 
   const navItems = [
     { path: '/hospital-dashboard', label: 'Dashboard', icon: <FaHospital /> },
-    { path: '/demand', label: 'Blood Demand', icon: <FaChartLine /> },
     { path: '/EventsPage', label: 'Events', icon: <FaCalendarCheck /> },
     { path: '/contact', label: 'Contact', icon: <FaUserMd /> },
   ];

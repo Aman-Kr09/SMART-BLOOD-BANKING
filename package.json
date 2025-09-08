@@ -13,7 +13,7 @@
     "@botpress/webchat": "^1.1.1",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.9",
+    "chart.js": "^4.5.0",
     "esbuild": "^0.25.9",
     "flask": "^0.2.10",
     "jspdf": "^3.0.1",

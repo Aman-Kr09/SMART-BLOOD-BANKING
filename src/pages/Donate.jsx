@@ -240,6 +240,39 @@ const Donate = () => {
       
       const result = await res.json();
       
+      // Submit to real-time analytics system
+      try {
+        const realtimeData = {
+          type: 'donation',
+          blood_type: formData.blood_type,
+          units: parseInt(formData.units) || 1,
+          city: formData.address.split(',').pop().trim() || 'Delhi', // Extract city from address
+          date: formData.donation_date || new Date().toISOString().split('T')[0],
+          urgency: 'normal',
+          source: 'donation_form',
+          donor_info: {
+            age: parseInt(formData.age),
+            hemoglobin: parseFloat(formData.hemoglobin),
+            weight: parseFloat(formData.weight),
+            hospital: formData.hospital
+          }
+        };
+        
+        await fetch("http://localhost:4000/api/realtime/donation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(realtimeData),
+        });
+        
+        console.log("Real-time data submitted successfully");
+      } catch (realtimeError) {
+        console.warn("Real-time data submission failed:", realtimeError);
+        // Don't fail the main donation process if real-time fails
+      }
+      
       // Update journey to completed stage
       updateJourneyStage('completed');
       

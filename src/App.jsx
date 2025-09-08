@@ -33,7 +33,6 @@ import Dashboard from './pages/Dashboard';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/ContactUs';
 import ProfilePage from './pages/Profile';
-import Demand from './pages/Demand';
 import PredictDemand from './pages/PredictDemand';
 import Donate from './pages/Donate';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -41,6 +40,7 @@ import TermsOfService from './pages/TermsOfService';
 import LiveDonorBoard from './pages/LiveDonorBoard';
 import Hospital from './pages/Hospital';
 import HospitalDashboardPage from './pages/HospitalDashboard';
+import BloodAnalytics from './pages/BloodAnalytics';
 import HospitalLoginPage from './pages/HospitalLogin';
 import EventsPage from "./pages/EventsPage";
 
@@ -81,8 +81,8 @@ function AppContent() {
           } />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/demand" element={<Demand />} />
           <Route path="/predict-demand" element={<PredictDemand />} />
+          <Route path="/analytics" element={<BloodAnalytics />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/TermsOfService" element={<TermsOfService />} />
           <Route path="/LiveDonorBoard" element={<LiveDonorBoard />} />
