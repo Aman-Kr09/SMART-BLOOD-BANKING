@@ -113,8 +113,8 @@
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #a10000;
-  color: #fff;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 /* Divider */
