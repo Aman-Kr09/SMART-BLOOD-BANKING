@@ -336,9 +336,6 @@ const HospitalDashboard = () => {
               </div>
             )}
           </div>
-          <button className="logout-btn" onClick={handleLogout}>
-            <FaSignOutAlt /> Logout
-          </button>
         </div>
       </div>
 
