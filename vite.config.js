@@ -8,24 +8,5 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     host: true
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          icons: ['react-icons'],
-          charts: ['chart.js', 'react-chartjs-2']
-        }
-      }
-    }
-  },
-  resolve: {
-    alias: {
-      '@': '/src'
-    }
   }
 })
