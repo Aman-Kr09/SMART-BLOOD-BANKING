@@ -78,7 +78,7 @@ const LiveDonorBoard = () => {
       const sampleDonors = [
         {
           id: 1,
-          name: "John Doe",
+          name: "Ajay Singh",
           bloodGroup: "O+",
           location: "Mumbai, Maharashtra",
           contact: "9876543210",
@@ -96,7 +96,7 @@ const LiveDonorBoard = () => {
         },
         {
           id: 2,
-          name: "Jane Smith",
+          name: "Dipanshu Sahu",
           bloodGroup: "A+",
           location: "Delhi, Delhi",
           contact: "9876543211",
@@ -114,7 +114,7 @@ const LiveDonorBoard = () => {
         },
         {
           id: 3,
-          name: "Mike Johnson",
+          name: "Aniket Pandey",
           bloodGroup: "B+",
           location: "Bangalore, Karnataka",
           contact: "9876543212",
